@@ -1,0 +1,65 @@
+/* Main styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.score {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Star styling */
+.fa-star, .fa-star-o, .fa-star-half-o {
+    font-size: 50px;
+    cursor: pointer;
+    color: gray;
+}
+.stars {
+    width: fit-content;
+}
+
+/* Card styling */
+.card-container {
+    position: relative;
+    min-width: 300px;
+    width: 60vw;
+    height: 100%;
+    overflow: hidden;
+} 
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+} 
+.card.hidden {
+    transform: translateX(-100%);
+} 
+.card-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.card-controls button {
+    padding: 0.5em 1em;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}

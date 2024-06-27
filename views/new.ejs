@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Neues Review erstellen</title>
+		<%- include('head.ejs') %>
+		<script src="public/src/"></script>
+        <link rel="stylesheet" href="styles/new.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<%- include('nav.ejs') %>
+		<main>
+			<div class="card-container">
+				<button id="prevCard" class="card-arrow">&#60;</button>
+				<div id="card1" class="card">
+					<h1>New Döner Review</h1>
+					<form id="newReviewForm">
+						<div class="form-group">
+							<label for="review-name">Store Name</label>
+							<input type="text" class="form-control" id="review-name" placeholder="Enter the name of the location">
+						</div>
+						<div class="form-group">
+							<label for="review-street">Location</label>
+							<input type="text" class="form-control" id="review-street" placeholder="Enter street">
+							<input type="text" class="form-control" id="review-number" placeholder="Enter house number">
+							<input type="text" class="form-control" id="review-zip" placeholder="Enter zip code">
+							<input type="text" class="form-control" id="review-maps" placeholder="Enter Google Maps Link (optional)">
+						</div>
+						<div class="form-group">
+							<label for="price">Price</label>
+							<input type="text" class="form-control" id="review-price" placeholder="Enter the price">
+						</div>
+						<div class="form-group">
+							<label for="body">Reasoning</label>
+							<textarea class="form-control" id="review-body" rows="3" placeholder="Enter your reasoning for the review"></textarea>
+						</div>
+						<div id="ratings">
+							<span class="reviewText">Taste</span>
+							<div class="stars" data-rating="0">
+								<i class="fa fa-star-o" data-index="0"></i>
+								<i class="fa fa-star-o" data-index="1"></i>
+								<i class="fa fa-star-o" data-index="2"></i>
+								<i class="fa fa-star-o" data-index="3"></i>
+								<i class="fa fa-star-o" data-index="4"></i>
+								<input type="hidden" name="rating" class="rating">
+							</div>
+							<span class="reviewText">Sauce</span>
+							<div class="stars" data-rating="0">
+								<i class="fa fa-star-o" data-index="0"></i>
+								<i class="fa fa-star-o" data-index="1"></i>
+								<i class="fa fa-star-o" data-index="2"></i>
+								<i class="fa fa-star-o" data-index="3"></i>
+								<i class="fa fa-star-o" data-index="4"></i>
+								<input type="hidden" name="rating" class="rating">
+							</div>
+							<span class="reviewText">Ingredients</span>
+							<div class="stars" data-rating="0">
+								<i class="fa fa-star-o" data-index="0"></i>
+								<i class="fa fa-star-o" data-index="1"></i>
+								<i class="fa fa-star-o" data-index="2"></i>
+								<i class="fa fa-star-o" data-index="3"></i>
+								<i class="fa fa-star-o" data-index="4"></i>
+								<input type="hidden" name="rating" class="rating">
+							</div>
+							<span class="reviewText">Presentation</span>
+							<div class="stars" data-rating="0">
+								<i class="fa fa-star-o" data-index="0"></i>
+								<i class="fa fa-star-o" data-index="1"></i>
+								<i class="fa fa-star-o" data-index="2"></i>
+								<i class="fa fa-star-o" data-index="3"></i>
+								<i class="fa fa-star-o" data-index="4"></i>
+								<input type="hidden" name="rating" class="rating">
+							</div>
+							<span class="reviewText">Value</span>
+							<div class="stars" data-rating="0">
+								<i class="fa fa-star-o" data-index="0"></i>
+								<i class="fa fa-star-o" data-index="1"></i>
+								<i class="fa fa-star-o" data-index="2"></i>
+								<i class="fa fa-star-o" data-index="3"></i>
+								<i class="fa fa-star-o" data-index="4"></i>
+								<input type="hidden" name="rating" class="rating">
+							</div>
+							<span class="reviewText">Ambiance</span>
+							<div class="stars" data-rating="0">
+								<i class="fa fa-star-o" data-index="0"></i>
+								<i class="fa fa-star-o" data-index="1"></i>
+								<i class="fa fa-star-o" data-index="2"></i>
+								<i class="fa fa-star-o" data-index="3"></i>
+								<i class="fa fa-star-o" data-index="4"></i>
+								<input type="hidden" name="rating" class="rating">
+							</div>
+						</div>
+						<span class="score">Total:<div id="total">0</div></span>
+						<span class="score">Median:<div id="median">0</div></span>
+						<button type="submit" class="button">Submit</button>
+					</form>
+				</div>
+				<div id="card2" class="card hidden">
+					<h1>New City</h1>
+					<form id="newCityForm">
+						<div class="form-group">
+							<label for="city-name">City Name</label>
+							<input type="text" class="form-control" id="city-name" placeholder="Enter the name of the city">
+						</div>
+						<div class="form-group">
+							<label for="city-zip">Zip</label>
+							<input type="text" class="form-control" id="city-zip" placeholder="Enter the zip code">
+						</div>
+						<div class="form-group">
+							<label for="city-country">Country</label>
+							<input type="text" class="form-control" id="city-country" placeholder="Enter the country">
+						</div>
+						<button type="submit" class="button">Submit</button>
+					</form>
+				</div>
+				<button id="nextCard" class="card-arrow">&#62;</button>
+			</div>
+		</main>
+		<script>
+			const cities = <%- JSON.stringify(cities) %>;
+		</script>
+        <script src="src/new.js"></script>
+		<%- include('footer.ejs') %>
+	</body>
+</html>

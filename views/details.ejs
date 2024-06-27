@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Döner in Erlangen</title>
+		<%- include('head.ejs') %>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<%- include('nav.ejs') %>
+
+		<h1>Details of review</h1>
+
+		<%- include('footer.ejs') %>
+		<script>
+			const review = <%- JSON.stringify(review) %>;
+            console.log(review);
+		</script>
+	</body>
+</html>

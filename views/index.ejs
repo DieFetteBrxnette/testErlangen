@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Döner in Erlangen</title>
+		<%- include('head.ejs') %>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<%- include('nav.ejs') %>
+
+		<h1>Current Reviews:</h1>
+		<button id="loadReviews" class="button">Refresh</button>
+		<div class="container">
+			<div class="row" id="reviews">
+			<!-- Cards will be added here by your JavaScript code -->
+			</div>
+		</div>
+		<a class="button" href="/new">New Review</a>
+
+		<%- include('footer.ejs') %>
+		<script>
+			const reviews = <%- JSON.stringify(reviews) %>;
+		</script>
+		<script src="src/index.js"></script>
+	</body>
+</html>
